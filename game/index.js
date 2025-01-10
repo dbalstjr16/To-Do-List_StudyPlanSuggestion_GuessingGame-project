@@ -6,8 +6,6 @@ let right = 100;
 let userAttempts = 0;
 let computerAttempts = 0;
 
-console.log(answer);
-
 const userScoreText = document.getElementById("user-score");
 const computerScoreText = document.getElementById("computer-score");
 let userScore = 0;
