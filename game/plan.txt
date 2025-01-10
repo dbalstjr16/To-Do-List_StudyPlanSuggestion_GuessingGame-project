@@ -1,0 +1,11 @@
+timer just for record score (leaderboard)
+
+binary search vs ai
+guess between 1 and 100
+
+Ai
+-Binary Search Algorithm
+-Mutation: makes random guess sometimes with low chance (escape)
+-Multiple AI run at the same time
+*option1: AI has lower range to find
+*2 ai run in the same range

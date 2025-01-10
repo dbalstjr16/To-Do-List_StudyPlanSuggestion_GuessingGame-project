@@ -1,0 +1,198 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(180deg, #f7f9fc, #e3f2fd);
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.main-container {
+    max-width: 800px;
+    background: #ffffff;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.title {
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    color: white;
+    font-weight: bold;
+    font-size: 2.5rem;
+    padding: 15px 20px;
+    border-radius: 12px 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.guess-phase {
+    margin-bottom: 20px;
+}
+
+.guess-phase input {
+    border: 2px solid #ddd;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: calc(100% - 24px);
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.guess-phase input:focus {
+    border-color: #4facfe;
+    box-shadow: 0 0 8px rgba(79, 172, 254, 0.4);
+}
+
+.guess-phase button {
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: white;
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.guess-phase button:hover {
+    background: linear-gradient(90deg, #2399ff, #00c6ff);
+    transform: translateY(-2px);
+}
+
+.guess-phase button:disabled {
+    background: none;
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
+
+.guess-phase button:disabled:hover {
+    background: none;
+    background-color: #ccc;
+    transform: none;
+}
+
+.logAttemptContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+}
+
+.display-number-of-attempts{
+    background-color: white;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+
+.display-number-of-attempts #attempt-title{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.display-number-of-attempts:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.log {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.log:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+#hint-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.user-result, .computer-guess {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.score-container{
+    background-color: white;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    padding: 20px;
+    font-family: 'Arial';
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.score-container:hover{
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+}
+
+#score-title{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.displayGameResultWin{
+    font-size: 3rem;
+    font-weight: bold;
+    color: green;
+}
+
+.displayGameResultLose{
+    font-size: 3rem;
+    font-weight: bold;
+    color: red;
+}
+
+.displayGameResultDraw{
+    font-size: 3rem;
+    font-weight: bold;
+}

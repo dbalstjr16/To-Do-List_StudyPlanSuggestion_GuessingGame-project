@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystery Number: Player vs Computer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="title">
+            Guess a Number Between 1 and 100!
+        </div>
+
+        <div class="guess-phase">
+            <input id="userText" type="number" placeholder="Enter your guess" min="1" max="100"><br>
+            <button onclick=processUserGuess() type="submit">Guess</button>
+        </div>
+    </div>
+
+    <div class="logAttemptContainer">
+        <div class="log">
+            <div id="hint-title">Hint</div><br>
+            <div class="user-result">
+                <div id="response-to-user"></div>
+                <div id="feedback"></div>
+            </div>
+    
+            <div class="computer-guess">
+                <div id="computer-feedback"></div>
+            </div>
+        </div>
+    
+        <div class="display-number-of-attempts">
+            <div id="attempt-title">
+                Number of Attempts
+            </div>
+            <div id="user-attempt"></div>
+            <div id="computer-attempt"></div>
+        </div>
+    </div>
+
+    <div class="score-container">
+        <div id="score-title">Scoreboard</div>
+        <div id="user-score">Your score: 0</div>
+        <div id="computer-score">Computer score: 0</div>
+    </div>
+
+    <div class="note">
+        <div>Contact: dbalstjr16@gmail.com</div>
+    </div>
+
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
