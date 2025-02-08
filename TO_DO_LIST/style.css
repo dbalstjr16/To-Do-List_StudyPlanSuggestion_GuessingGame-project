@@ -6,22 +6,20 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f7f9fc; /* Softer background color */
-    color: #333; /* Darker text for readability */
+    background-color: #f7f9fc; 
+    color: #333; 
     line-height: 1.6;
 }
 
-/* Main Container */
 .main-container {
-    max-width: 800px; /* Limit width for better readability */
-    margin: 20px auto; /* Center the content */
+    max-width: 800px; 
+    margin: 20px auto; 
     padding: 20px;
-    border-radius: 10px; /* Add rounded corners */
+    border-radius: 10px;
     background: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Title */
 .title {
     background: linear-gradient(90deg, #ff9800, #ffc107);
     color: white;
@@ -29,15 +27,14 @@ body {
     font-size: 2.5em;
     font-weight: bold;
     padding: 20px 0;
-    border-radius: 10px 10px 0 0; /* Rounded top corners */
+    border-radius: 10px 10px 0 0;
 }
 
-/* Add Task Section */
 .add-task {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Space between elements */
+    gap: 10px;
     text-align: center;
 }
 
@@ -56,7 +53,7 @@ body {
 }
 
 .add-task input:focus {
-    border-color: #ff9800; /* Highlight on focus */
+    border-color: #ff9800;
 }
 
 .add-task button {
@@ -73,23 +70,21 @@ body {
 
 .add-task button:hover {
     background-color: #e68900;
-    transform: translateY(-2px); /* Subtle lift effect */
+    transform: translateY(-2px);
 }
 
 .add-task button:active {
-    transform: scale(0.98); /* Press effect */
+    transform: scale(0.98);
 }
 
-/* Task List Section */
 .edit-delete-task {
     margin-top: 20px;
     padding: 20px;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Task Header */
 #task-header {
     background-color: #ff9800;
     color: white;
@@ -101,7 +96,6 @@ body {
     margin-bottom: 10px;
 }
 
-/* Task Box */
 .task-box {
     display: flex;
     justify-content: space-between;
