@@ -20,7 +20,7 @@ document.getElementById("signin").addEventListener("click", async function (even
             window.location.href = "index.html";
         }
         else {
-            alert("invalid login");
+            alert("not a valid login or password");
         }
 
         console.log(data.message);

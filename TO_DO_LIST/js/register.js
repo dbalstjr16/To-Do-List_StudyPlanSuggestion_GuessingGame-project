@@ -10,6 +10,7 @@ document.getElementById("signup").addEventListener("click", async function(event
     //TODO!!!!!!!!!!!!!! - if email already exist return/alert the user "u already have an account"
     
     if (password === confirmPassword) {
+        
         const response = await fetch(register_url, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
@@ -22,7 +23,7 @@ document.getElementById("signup").addEventListener("click", async function(event
             alert("successfully create an account! Now, try to login!");
         }
         else {
-            alert("invalid data returned");
+            console.error(data.error);
         }
     }
     else {

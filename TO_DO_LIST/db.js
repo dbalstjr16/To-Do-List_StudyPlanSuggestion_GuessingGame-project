@@ -1,6 +1,5 @@
 const sqlite3 = require("sqlite3").verbose();
 
-// ✅ Create a single database connection
 const db = new sqlite3.Database("database.sqlite", (err) => {
     if (err) {
         console.error("Error connecting to the database:", err);
@@ -9,7 +8,6 @@ const db = new sqlite3.Database("database.sqlite", (err) => {
     }
 });
 
-// ✅ Create Tasks Table if it Doesn't Exist
 db.run(`
     CREATE TABLE IF NOT EXISTS tasks (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -20,5 +18,21 @@ db.run(`
     else console.log("Table 'tasks' is ready");
 });
 
-// ✅ Export the database connection for reuse
+db.run("DROP TABLE IF EXISTS users", (error) => {
+    if (error) console.log(error);
+    else {
+        db.run(`
+            CREATE TABLE IF NOT EXISTS users (
+                userid INTEGER PRIMARY KEY AUTOINCREMENT,
+                email TEXT NOT NULL UNIQUE,
+                password TEXT NOT NULL
+            )
+            `, (err) => {
+            if (err) console.error("Error creating table:", err);
+            else console.log("Table 'users' is ready");
+        });
+
+    }
+})
+
 module.exports = db;
