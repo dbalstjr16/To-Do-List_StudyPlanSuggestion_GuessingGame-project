@@ -2,7 +2,7 @@ const text = document.getElementById("submitText");
 const taskBox = document.querySelector(".edit-delete-task");
 const addButton = document.getElementById("addButton");
 
-const API_URL = "http://localhost:3000/tasks";
+const API_URL = "http://localhost:5000/tasks";
 
 async function loadTasks() {
     fetch(API_URL)

@@ -1,14 +1,14 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const bodyParser = require("body-parser");
+
 const {Sequelize, DataTypes} = require("sequelize");
 
 const app = express();
-const PORT = 3000;
+const PORT = 5000;
 
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 
 const sequelize = new Sequelize({
     dialect: "sqlite",
@@ -61,6 +61,9 @@ app.put("/tasks/:id", async (req, res) => {
     await Task.update({ task }, { where: { id } });
     res.json({ message: "Task updated" });
 });
+
+const loginRouter = require('./routes/logins.js');
+app.use('/login', loginRouter)
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
