@@ -2,8 +2,11 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 
+const OpenAI = require("openai");
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 
 app.use(cors());
 app.use(express.json());
@@ -79,6 +82,9 @@ app.use("/login", loginRouter);
 
 const registerRouter = require("./routes/registers.js");
 app.use("/register", registerRouter);
+
+const recommendRouter = require("./routes/recommends.js");
+app.use("/recommend-course", recommendRouter);
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
