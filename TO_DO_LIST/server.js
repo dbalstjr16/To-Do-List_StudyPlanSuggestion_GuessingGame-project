@@ -27,17 +27,17 @@ app.get("/tasks", (req, res) => {
 
 // if user requests post on /tasks, we add the request into the new data and respond back with success
 app.post("/tasks", (req, res) => {
-    const { task } = req.body;
-    if (!task) {
+    const { task_name, date } = req.body;
+    if (!task_name) {
         return res.status(400).json({ error: "Task content is required" });
     }
 
-    db.run("INSERT INTO tasks (task) VALUES (?)", [task], (err) => {
+    db.run("INSERT INTO tasks (task_name, date) VALUES (?, ?)", [task_name, date], (err) => {
         if (err) {
             console.error(err);
             return res.status(500).json({ error: "Database error" });
         } else {
-            return res.status(201).json({ id: this.lastID, task });
+            return res.status(201).json({ id: this.lastID, task_name, date });
         }
     });
 });
@@ -57,15 +57,16 @@ app.delete("/tasks/:id", (req, res) => {
     });
 });
 
+//might need to update due date too
 app.put("/tasks/:id", (req, res) => {
     const { id } = req.params;
-    const { task } = req.body;
+    const { task_name, date } = req.body;
 
-    if (!task) {
+    if (!task_name) {
         return res.status(400).json({ error: "Task content is required" });
     }
 
-    db.run("UPDATE tasks SET task = ? WHERE id = ?", [task, id], (err) => {
+    db.run("UPDATE tasks SET task_name = ?, date = ? WHERE id = ?", [task_name, date, id], (err) => {
         if (err) {
             console.error(err);
             res.status(500).json({ error: "Database error" });

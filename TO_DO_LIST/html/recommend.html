@@ -17,19 +17,27 @@
         <h1 class="text-center">
             <a href="index.html" class="text-decoration-none text-primary">AI Study Plan Suggestion</a>
         </h1>
-        <p class="text-center text-secondary">Enter your completed courses to receive AI-powered recommendations.</p>
-
+        <p class="text-center text-secondary">Enter your school, completed courses, and interests to receive AI-powered recommendations for future courses.</p>
+        
+        <p class="text-secondary">It's okay to leave the text box blank, if it is not applicable! But, try not to input unrelated, unexisiting school or courses...</p>
         <div class="mb-3">
-            <textarea id="completedCourses" class="form-control" rows="4"
-                placeholder="Enter completed courses, separated by commas..."></textarea>
+            <p>School</p>
+            <input id="school" class="form-control" rows="4" placeholder="Enter your school..."></input>
+        </div>
+        <div class="mb-3">
+            <p>Completed Courses</p>
+            <input id="completedCourses" class="form-control" rows="4"
+                placeholder="Enter completed courses, separated by commas..."></input>
+        </div>
+        <div class="mb-3">
+            <p>Interests</p>
+            <input id="interests" class="form-control" rows="4"
+                placeholder="Enter topics you are interested in, separated by commas..."></input>
         </div>
 
         <div class="d-grid gap-2">
-            <button id="generatePlan" class="btn btn-primary">Get Study Plan</button>
+            <button id="generatePlan" class="btn btn-primary">Get Recommended Courses</button>
         </div>
-
-        <h2 class="mt-4">Completed Courses</h2>
-        <ul id="completedList" class="list-group"></ul>
 
         <h2 class="mt-4">Suggested Courses</h2>
         <ul id="suggestionsList" class="list-group"></ul>

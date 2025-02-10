@@ -1,4 +1,5 @@
 ...
+user: student probably most likely college students.
 
 future plans
 login/register fail output more professionally
@@ -8,3 +9,6 @@ add new pages: ai recommendation for courses, write private notes, algoritms???
 course reviews...?
 
 taskkill /f /im node.exe
+
+recommend.js: prompt based on interest, school?, completed courses,  --> suggest future courses to take and there description.
+private note page: download option, write and save notes even after logout

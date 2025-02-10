@@ -11,7 +11,8 @@ const db = new sqlite3.Database("database.sqlite", (err) => {
 db.run(`
     CREATE TABLE IF NOT EXISTS tasks (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        task TEXT NOT NULL
+        task_name TEXT NOT NULL,
+        date TEXT NOT NULL
     )
 `, (err) => {
     if (err) console.error("Error creating table:", err);

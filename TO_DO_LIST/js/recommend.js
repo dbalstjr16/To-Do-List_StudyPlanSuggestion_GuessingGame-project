@@ -1,19 +1,27 @@
 const API_URL = "http://localhost:5000/recommend-course";
 
 document.getElementById("generatePlan").addEventListener("click", async function () {
-    const coursesInput = document.getElementById("completedCourses").value.trim();
+    let schoolInput = document.getElementById("school").value.trim();
+    let coursesInput = document.getElementById("completedCourses").value.trim();
+    let interestsInput = document.getElementById("interests").value.trim();
 
+    if (!schoolInput) {
+        schoolInput = "no school";
+    }
     if (!coursesInput) {
-        alert("Please enter at least one completed course!");
-        return;
+        coursesInput = "none";
+    }
+    if (!interestsInput) {
+        interestsInput = "no particular interests";
     }
 
     const completedCourses = coursesInput.split(",").map(course => course.trim());
+    const interests = interestsInput.split(",").map(interest => interest.trim());
 
     const response = await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ completedCourses })
+        body: JSON.stringify({ schoolInput, completedCourses, interests })
     });
 
     const data = await response.json();
@@ -23,6 +31,7 @@ document.getElementById("generatePlan").addEventListener("click", async function
         return;
     }
 
+    /*
     const completedList = document.getElementById("completedList");
     completedList.innerHTML = "";
     completedCourses.forEach(course => {
@@ -30,12 +39,13 @@ document.getElementById("generatePlan").addEventListener("click", async function
         li.textContent = course;
         completedList.appendChild(li);
     });
+    */
 
     const suggestionsList = document.getElementById("suggestionsList");
     suggestionsList.innerHTML = "";
     data.suggestions.forEach(course => {
         const li = document.createElement("li");
-        li.textContent = course;
+        li.innerText = course;
         suggestionsList.appendChild(li);
     });
 });
