@@ -10,5 +10,6 @@ course reviews...?
 
 taskkill /f /im node.exe
 
+to-do-list page: might want to add due date column too
 recommend.js: prompt based on interest, school?, completed courses,  --> suggest future courses to take and there description.
 private note page: download option, write and save notes even after logout
