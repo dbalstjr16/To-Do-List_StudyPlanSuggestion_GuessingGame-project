@@ -31,21 +31,30 @@ document.getElementById("generatePlan").addEventListener("click", async function
         return;
     }
 
-    /*
-    const completedList = document.getElementById("completedList");
-    completedList.innerHTML = "";
-    completedCourses.forEach(course => {
-        const li = document.createElement("li");
-        li.textContent = course;
-        completedList.appendChild(li);
-    });
-    */
-
     const suggestionsList = document.getElementById("suggestionsList");
     suggestionsList.innerHTML = "";
+    const row = document.createElement("div");
+    row.className = "row g-3";
+
     data.suggestions.forEach(course => {
-        const li = document.createElement("li");
-        li.innerText = course;
-        suggestionsList.appendChild(li);
+        const col = document.createElement("div");
+        col.className = "col-md-6 col-lg-4";
+
+        const card = document.createElement("div");
+        card.className = "card shadow-sm h-100";
+
+        const cardBody = document.createElement("div");
+        cardBody.className = "card-body";
+
+        const cardTitle = document.createElement("h5");
+        cardTitle.className = "card-title";
+        cardTitle.innerText = course;
+
+        cardBody.appendChild(cardTitle);
+        card.appendChild(cardBody);
+        col.appendChild(card);
+        row.appendChild(col);
     });
+
+    suggestionsList.appendChild(row);
 });

@@ -5,6 +5,7 @@
   <img src="./assets/register.png" alt="Search" width="1500"/>
   <img src="./assets/to_do_list.png" alt="Review" width="1500"/>
   <img src="./assets/studyPlanSuggestion.png" alt="Review" width="1500"/>
+  <img src="./assets/suggestionResult.png" alt="Result" width="1500"/>
 </div>
 
 ## ❓ Guessing Game Demo 
